@@ -19,7 +19,8 @@
     <div class="content">
       <main class="page">
         <div class="fortune">
-          <picture><source srcset="./img/bg-transparent.webp" type="image/webp"><img class="fortune__bg" src="./img/bg-transparent.jpg" alt=""></picture>
+          <span class="fortune__bg"> <picture><source srcset="./img/bg-transparent.webp" type="image/webp"><img src="./img/bg-transparent.jpg" alt=""></picture></span>
+
           <div class="fortune__body">
             <div class="fortune__info">
               <h1 class="fortune__title">
@@ -35,13 +36,13 @@
               </p>
 
               <div class="fortune__form">
-                <input id="passwordInput" placeholder="Ваш код .." type="text" class="fortune__input">
+                <input id="passwordInput" maxlength="6" placeholder="Ваш код .." type="text" class="fortune__input">
                 <button class="fortune__submit" id="submitButton">Запустити колесо</button>
               </div>
             </div>
 
             <div class="fortune__wheel">
-              <picture><source srcset="./img/bg-transparent.webp" type="image/webp"><img class="fortune__bg" src="./img/bg-transparent.jpg" alt=""></picture>
+              <span class="fortune__bg"> <picture><source srcset="./img/bg-transparent.webp" type="image/webp"><img src="./img/bg-transparent.jpg" alt=""></picture></span>
               <span class="fortune__arrow"> <picture><source srcset="./img/marker.webp" type="image/webp"><img src="./img/marker.png" alt=""></picture></span>
               <span class="fortune__circle wheel"><picture><source srcset="./img/wheel17.webp" type="image/webp"><img src="./img/wheel17.png" alt=""></picture></span>
             </div>
