@@ -811,6 +811,10 @@ body::-webkit-scrollbar-track {
   font-size: 16px;
 }
 
+* {
+overscroll-behavior: none;
+}
+
 /* Кнопка закриття */
 .modal .styled-button {
   padding: 10px 20px;
