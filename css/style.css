@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -130,10 +131,21 @@ body {
   background-color: #9744d2;
   font-family: VinSansPro;
   color: #000;
-  font-size: 14px;
+  font-size: 36px;
 }
 body._lock-scroll {
   overflow: hidden;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+body::-webkit-scrollbar-thumb {
+  background: #68d6b9;
+  border-radius: 5px;
+}
+body::-webkit-scrollbar-track {
+  background: #9744d2;
 }
 
 .wrapper {
@@ -154,16 +166,119 @@ body._lock-scroll {
 }
 
 .fortune {
-  min-height: 100vh;
-  background: url("../img/bg.jpg") 0 0/100% no-repeat;
   position: relative;
+  max-height: 100vh;
+}
+@media (max-width: 992px) {
+  .fortune {
+    max-height: none;
+  }
+}
+.fortune__bg {
+  width: 100%;
+  max-width: 100%;
+}
+@media (max-width: 992px) {
+  .fortune__bg {
+    display: none;
+  }
 }
 .fortune__body {
-  padding: 20px 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 992px) {
+  .fortune__body {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+}
+@media (max-width: 992px) and (max-width: 992px) {
+  .fortune__body {
+    row-gap: calc(10px - -10 * (100vw - 320px) / 672);
+  }
+}
+@media (max-width: 992px) and (max-width: 320px) {
+  .fortune__body {
+    row-gap: 10px;
+  }
 }
 .fortune__info {
   width: 100%;
-  max-width: 530px;
+  padding: 20px 40px;
+  max-width: 700px;
+  position: relative;
+  padding: 20px 40px;
+  z-index: 2;
+}
+@media (max-width: 1600px) {
+  .fortune__info {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__info {
+    padding-top: calc(4px - -16 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__info {
+    padding-top: 4px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__info {
+    padding-bottom: calc(4px - -16 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__info {
+    padding-bottom: 4px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__info {
+    padding-left: calc(8px - -32 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__info {
+    padding-left: 8px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__info {
+    padding-right: calc(8px - -32 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__info {
+    padding-right: 8px;
+  }
+}
+@media (max-width: 992px) {
+  .fortune__info {
+    z-index: -1;
+  }
+  .fortune__info:before {
+    content: "";
+    background-color: #68d6b9;
+    border-radius: 50%;
+    width: 95%;
+    height: 170%;
+    position: absolute;
+    left: -20%;
+    top: -20%;
+    z-index: -1;
+  }
 }
 .fortune__title {
   font-size: 72px;
@@ -171,11 +286,107 @@ body._lock-scroll {
   margin-top: 40px;
   font-weight: bold;
 }
+@media (max-width: 1600px) {
+  .fortune__title {
+    font-size: 72px;
+    line-height: 75px;
+    margin-top: 40px;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__title {
+    font-size: calc(25px - -47 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__title {
+    font-size: 25px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__title {
+    line-height: calc(26px - -49 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__title {
+    line-height: 26px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__title {
+    margin-top: calc(8px - -32 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__title {
+    margin-top: 8px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__title {
+    margin-top: calc(8px - -32 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__title {
+    margin-top: 8px;
+  }
+}
 .fortune__subtitle {
   font-size: 39px;
   line-height: 41px;
   margin: 32px 0;
   font-weight: bold;
+}
+@media (max-width: 1600px) {
+  .fortune__subtitle {
+    font-size: 39px;
+    line-height: 41px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__subtitle {
+    font-size: calc(14px - -25 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__subtitle {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__subtitle {
+    line-height: calc(14px - -27 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__subtitle {
+    line-height: 14px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__subtitle {
+    margin-top: calc(6px - -26 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__subtitle {
+    margin-top: 6px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__subtitle {
+    margin-bottom: calc(6px - -26 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__subtitle {
+    margin-bottom: 6px;
+  }
 }
 .fortune__desc {
   font-size: 22px;
@@ -183,23 +394,191 @@ body._lock-scroll {
   margin: 22px 0;
   margin-bottom: 65px;
 }
+@media (max-width: 1600px) {
+  .fortune__desc {
+    font-size: 22px;
+    line-height: 22px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__desc {
+    font-size: calc(8px - -14 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__desc {
+    font-size: 8px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__desc {
+    line-height: calc(8px - -14 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__desc {
+    line-height: 8px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__desc {
+    margin-top: calc(4px - -18 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__desc {
+    margin-top: 4px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__desc {
+    margin-bottom: calc(4px - -18 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__desc {
+    margin-bottom: 4px;
+  }
+}
 .fortune__form {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+@media (max-width: 1600px) {
+  .fortune__form {
+    align-items: start;
+  }
+}
 .fortune__input {
   width: 100%;
   max-width: 306px;
   padding: 16px 20px;
   font-size: 28px;
+  line-height: 30px;
   border: 6px solid #ff80cd;
   border-radius: 20px;
   transition: all 0.3s ease;
   margin-bottom: 20px;
   text-transform: uppercase;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 1600px) {
+  .fortune__input {
+    font-size: 28px;
+    line-height: 30px;
+    max-width: 306px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border-width: 6px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__input {
+    font-size: calc(10px - -18 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__input {
+    font-size: 10px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__input {
+    line-height: calc(11px - -19 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__input {
+    line-height: 11px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__input {
+    max-width: calc(105px - -201 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__input {
+    max-width: 105px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__input {
+    padding-top: calc(6px - -10 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__input {
+    padding-top: 6px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__input {
+    padding-bottom: calc(6px - -10 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__input {
+    padding-bottom: 6px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__input {
+    padding-left: calc(7px - -13 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__input {
+    padding-left: 7px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__input {
+    padding-right: calc(7px - -13 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__input {
+    padding-right: 7px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__input {
+    border-radius: calc(4px - -16 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__input {
+    border-radius: 4px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__input {
+    margin-bottom: calc(4px - -16 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__input {
+    margin-bottom: 4px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__input {
+    border-width: calc(1px - -5 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__input {
+    border-width: 1px;
+  }
 }
 .fortune__input:focus {
   border-color: #9744d2;
@@ -209,7 +588,7 @@ body._lock-scroll {
   max-width: 306px;
   color: #f5f5f5;
   font-size: 24px;
-  padding: 20px 20px;
+  padding: 20px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -222,29 +601,156 @@ body._lock-scroll {
   transform: translateY(2px);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
-.fortune__wheel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  width: 100%;
-  max-width: 32%;
-  top: 9%;
-  right: 27.5%;
+@media (max-width: 1600px) {
+  .fortune__submit {
+    font-size: 24px;
+    max-width: 306px;
+    padding: 20px;
+    border-radius: 20px;
+  }
 }
-.fortune__wheel img {
-  width: 100%;
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__submit {
+    font-size: calc(9px - -15 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__submit {
+    font-size: 9px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__submit {
+    max-width: calc(105px - -201 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__submit {
+    max-width: 105px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__submit {
+    padding: calc(4px - -16 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__submit {
+    padding: 4px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 1600px) {
+  .fortune__submit {
+    border-radius: calc(4px - -16 * (100vw - 320px) / 1280);
+  }
+}
+@media (max-width: 1600px) and (max-width: 320px) {
+  .fortune__submit {
+    border-radius: 4px;
+  }
+}
+@media (max-width: 992px) {
+  .fortune__wheel {
+    position: relative;
+    margin-left: -300px;
+  }
+}
+@media (max-width: 992px) and (max-width: 992px) {
+  .fortune__wheel {
+    margin-left: calc(-100px - 200 * (100vw - 320px) / 672);
+  }
+}
+@media (max-width: 992px) and (max-width: 320px) {
+  .fortune__wheel {
+    margin-left: -100px;
+  }
+}
+.fortune__wheel .fortune__bg {
+  display: none;
+}
+@media (max-width: 992px) {
+  .fortune__wheel .fortune__bg {
+    display: block;
+  }
 }
 .fortune__arrow {
   display: inline-block;
-  position: relative;
+  position: absolute;
   z-index: 2;
   margin-bottom: -27px;
   width: 100%;
-  max-width: 16.597%;
+  max-width: 5%;
+  top: 10%;
+  right: 41%;
 }
 .fortune__arrow img {
   width: 100%;
+}
+.fortune__circle {
+  position: absolute;
+  width: 100%;
+  max-width: 32%;
+  top: 17%;
+  right: 27.5%;
+}
+.fortune__circle img {
+  width: 100%;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Прозорий чорний фон */
+  display: none; /* Спочатку приховане */
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+/* Спливаюче вікно */
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Текст у вікні */
+.modal h2 {
+  margin: 0 0 15px;
+  font-size: 20px;
+}
+
+.modal p {
+  margin: 0 0 20px;
+  font-size: 16px;
+}
+
+/* Кнопка закриття */
+.modal .styled-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal .styled-button:hover {
+  background-color: #4b47c5;
+}
+
+/* Відображення модального вікна */
+.modal-overlay.active {
+  display: flex; /* Показуємо модальне вікно */
 }
 
 .page {

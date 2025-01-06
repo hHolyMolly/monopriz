@@ -19,6 +19,7 @@
     <div class="content">
       <main class="page">
         <div class="fortune">
+          <picture><source srcset="./img/bg-transparent.webp" type="image/webp"><img class="fortune__bg" src="./img/bg-transparent.jpg" alt=""></picture>
           <div class="fortune__body">
             <div class="fortune__info">
               <h1 class="fortune__title">
@@ -34,20 +35,30 @@
               </p>
 
               <form action="#" class="fortune__form">
-                <input placeholder="Ваш код .." type="text" class="fortune__input">
-                <button class="fortune__submit">Запустити колесо</button>
+                <input id="passwordInput" placeholder="Ваш код .." type="text" class="fortune__input">
+                <button class="fortune__submit" id="submitButton">Запустити колесо</button>
               </form>
             </div>
 
             <div class="fortune__wheel">
+              <picture><source srcset="./img/bg-transparent.webp" type="image/webp"><img class="fortune__bg" src="./img/bg-transparent.jpg" alt=""></picture>
               <span class="fortune__arrow"> <picture><source srcset="./img/marker.webp" type="image/webp"><img src="./img/marker.png" alt=""></picture></span>
-              <span class="fortune__circle"><picture><source srcset="./img/wheel17.webp" type="image/webp"><img src="./img/wheel17.png" alt=""></picture></span>
+              <span class="fortune__circle wheel"><picture><source srcset="./img/wheel17.webp" type="image/webp"><img src="./img/wheel17.png" alt=""></picture></span>
             </div>
           </div>
         </div>
       </main>
     </div>
   </div>
+
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <h2>Результат</h2>
+      <p id="result"></p>
+      <button class="styled-button" id="close-modal">Закрити</button>
+    </div>
+  </div>
+
   <script src="js/script.js"></script>
 </body>
 
